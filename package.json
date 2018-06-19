@@ -15,7 +15,9 @@
   "scripts": {
     "start": "babel-node ./index",
     "test": "find ./spec -iname '*.spec.js' -exec babel-node {} \\; | tap-spec",
-    "build": "babel -d ./dist ./src"
+    "build": "babel -d ./dist ./src",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "main": "dist/index.js",
   "keywords": [
@@ -25,7 +27,8 @@
     "drive"
   ],
   "dependencies": {
-    "google-spreadsheet": "2.0.0"
+    "google-spreadsheet": "2.0.0",
+    "snyk": "^1.83.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -35,5 +38,6 @@
     "proxyquire": "1.6.0",
     "tap-spec": "4.0.2",
     "tape": "4.0.0"
-  }
+  },
+  "snyk": true
 }
